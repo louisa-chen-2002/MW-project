@@ -1,5 +1,4 @@
 ####### MW Frequency Analysis #######
-setwd("/Users/siyuchen/Desktop/UW/CCDL/Louisa-MindWanderingProject/MW_project_2.0/MW_project_code/data")
 
 ################ Data ################
 MW <- read.csv(file = "MW.csv", header = TRUE)
