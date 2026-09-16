@@ -1,5 +1,5 @@
 ######## DDM Analysis ########
-
+setwd("/Users/siyuchen/Desktop/UW/CCDL/Louisa-MindWanderingProject/MW_project_2.0/MW_project_code/data/ddm_parameters/") 
 ################ Data ################
 before <- read.csv("sart_param_before_summary.csv")
 after <- read.csv("sart_param_after_summary.csv") 
@@ -53,6 +53,23 @@ mw_ddm_p2$subject   <- as.factor(mw_ddm_p2$subject)
 mw_ddm_p2$condition <- as.factor(mw_ddm_p2$condition)
 mw_ddm_p2$state     <- as.factor(mw_ddm_p2$state)
 
+
+View(mw_ddm_p1)
+
+############## Before Intervention ANOVA ################
+# filter condition = before
+before_ddm_p1 <- mw_ddm_p1 %>%
+  filter(condition == "before") %>%
+  mutate(
+    task = factor(task, 
+                  levels = c("control", "rest-break", "task-switch")))
+# Anova on ddm parameters on if condition (task) is significant
+anova_v.ng <- aov(v.ng ~ task, data = before_ddm_p1)
+summary(anova_v.ng)
+anova_v.go <- aov(v.go ~ task, data = before_ddm_p1)
+summary(anova_v.go)
+anova_a <- aov(a ~ task, data = before_ddm_p1)
+summary(anova_a)
 
 ############## Model ################
 #### full parameters ####
