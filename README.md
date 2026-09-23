@@ -1,4 +1,4 @@
-## Data and code for MW project associated with 
+## Data and code for MW project
 ### Maintaining Performance Without Reducing Mind-Wandering: Exploring the Impact of Short Breaks during Sustained Attention Tasks
 ### Repository Structure
 * analysis/: Contains scripts used to reproduce the analyses and statistical models reported in the project.
